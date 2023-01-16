@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+      integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Welcome</title>
+  </head>
+  <body>
+    <header>
+      <div class="title">
+        <h1 class="header-text">Please enter your login details</h1>
+      </div>
+    </header>
+    <main>
+      <section class="login">
+        <div class="loginDetails">
+          <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Username" />
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Password" />
+            <button type="submit" class="loginButton">LOGIN</button>
+          </form>
+        </div>
+      </section>
+      <section class="createAccount">
+        <h3>Don't have an account? Regsiter here! ↓</h3>
+        <button onclick="window.location='register.html' " id="registerButton">
+          Create account
+        </button>
+      </section>
+    </main>
+  </body>
+</html>
