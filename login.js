@@ -15,7 +15,13 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
       );
       if (login.length == 1) {
         console.log("Success");
-        window.location.replace("afterLogin.html");
+        sessionStorage.setItem("userId", login[0].id);
+        sessionStorage.setItem("role", login[0].role);
+        if (login[0].role == 1) {
+          window.location.replace("afterLogin.html");
+        } else {
+          window.location.replace("register.html");
+        }
       } else {
         console.log("Wrong details");
         alert("Wrong username or password");
