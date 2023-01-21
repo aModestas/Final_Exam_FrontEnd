@@ -79,6 +79,9 @@ document.getElementById("loadFromSearch").addEventListener("click", (e) => {
     const tdEmail = document.createElement("td");
     const tdAddressID = document.createElement("td");
     const tdUserID = document.createElement("td");
+    const tdRemoveButton = document.createElement("button");
+    tdRemoveButton.id = "removeButton";
+    tdRemoveButton.textContent = "REMOVE";
 
     tdId.textContent = user.id;
     img.src = user.picture;
@@ -100,9 +103,29 @@ document.getElementById("loadFromSearch").addEventListener("click", (e) => {
       tdTelNumber,
       tdEmail,
       tdAddressID,
-      tdUserID
+      tdUserID,
+      tdRemoveButton
     );
     tdImg.append(img);
+    document.getElementById("removeButton").addEventListener("click", (e) => {
+      e.preventDefault();
+      let input = document.querySelector("#search").value;
+      fetch("https://localhost:7068/Person/id?id=" + input, {
+        method: "DELETE",
+        body: JSON.stringify(user),
+        headers: {
+          Accept: "text/plain",
+          "Content-Type": "application/json",
+        },
+      }).then((res) => {
+        if (res.ok) {
+          alert("User deleted");
+          window.location.reload();
+        } else {
+          alert("Request failed");
+        }
+      });
+    });
   }
   document.querySelector("form").addEventListener("submit", masterFilter);
   function masterFilter(e) {
