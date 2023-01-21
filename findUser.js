@@ -1,5 +1,6 @@
 createSearch();
 createTable();
+console.log(sessionStorage.getItem("role"));
 function createTable() {
   const createTable = document.createElement("table");
   document.body.append(createTable);
@@ -110,21 +111,26 @@ document.getElementById("loadFromSearch").addEventListener("click", (e) => {
     document.getElementById("removeButton").addEventListener("click", (e) => {
       e.preventDefault();
       let input = document.querySelector("#search").value;
-      fetch("https://localhost:7068/Person/id?id=" + input, {
-        method: "DELETE",
-        body: JSON.stringify(user),
-        headers: {
-          Accept: "text/plain",
-          "Content-Type": "application/json",
-        },
-      }).then((res) => {
-        if (res.ok) {
-          alert("User deleted");
-          window.location.reload();
-        } else {
-          alert("Request failed");
-        }
-      });
+      const role = sessionStorage.getItem("role");
+      if (role == "admin") {
+        fetch("https://localhost:7068/Person/id?id=" + input, {
+          method: "DELETE",
+          body: JSON.stringify(user),
+          headers: {
+            Accept: "text/plain",
+            "Content-Type": "application/json",
+          },
+        }).then((res) => {
+          if (res.ok) {
+            alert("User deleted");
+            window.location.reload();
+          } else {
+            alert("Request failed");
+          }
+        });
+      } else {
+        alert("You don't have the capacity for that bigman");
+      }
     });
   }
   document.querySelector("form").addEventListener("submit", masterFilter);

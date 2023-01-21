@@ -18,9 +18,9 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
         sessionStorage.setItem("userId", login[0].id);
         sessionStorage.setItem("role", login[0].role);
         if (login[0].role == 1) {
-          window.location.replace("afterLogin.html");
+          window.location.replace("findUser.html");
         } else {
-          window.location.replace("uploadInfo.html");
+          window.location.replace("findUser.html");
         }
       } else {
         console.log("Wrong details");
