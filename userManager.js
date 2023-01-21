@@ -1,24 +1,3 @@
-createSearch();
-function createSearch() {
-  const form = document.createElement("form");
-  const input = document.createElement("input");
-  input.id = "search";
-  const button = document.createElement("button");
-
-  button.textContent = "Search";
-  form.append(input, button);
-  document.body.prepend(form);
-}
-
-function masterFilter(e) {
-  e.preventDefault();
-  let input = document.querySelector("#search").value;
-  const foundUser = users.filter((user) => {
-    return input == user.id;
-  });
-  renderData(foundUser);
-}
-document.querySelector("form").addEventListener("submit", masterFilter);
 document.getElementById("loadUsers").addEventListener("click", (e) => {
   e.preventDefault();
   var x = document.getElementById("loadUsers");
@@ -29,8 +8,6 @@ document.getElementById("loadUsers").addEventListener("click", (e) => {
   }
   let users = [];
   createTable();
-  // createCheckbox();
-
   fetch("https://localhost:7068/Person")
     .then((Response) => Response.json())
     .then((data) => {
@@ -38,13 +15,6 @@ document.getElementById("loadUsers").addEventListener("click", (e) => {
       renderData(data);
       users = data;
     });
-
-  // function createCheckbox() {
-  //   const checkbox = document.createElement("input");
-  //   checkbox.type = "checkbox";
-  //   checkbox.id = "checkbox";
-  //   document.body.prepend(checkbox);
-  // }
   function createTable() {
     const createTable = document.createElement("table");
     document.body.append(createTable);
@@ -128,5 +98,13 @@ document.getElementById("loadUsers").addEventListener("click", (e) => {
       tdImg.append(img);
     });
   }
-  //document.querySelector("#checkbox").addEventListener("change", masterFilter);
+  document.querySelector("form").addEventListener("submit", masterFilter);
+  function masterFilter(e) {
+    e.preventDefault();
+    let input = document.querySelector("#search").value;
+    const foundUser = users.filter((user) => {
+      return input == user.id;
+    });
+    renderData(foundUser);
+  }
 });
