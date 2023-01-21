@@ -12,28 +12,20 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Welcome</title>
+    <script src="userManager.js" defer></script>
+    <title>User manager</title>
   </head>
   <body>
     <header>
       <div class="title">
-        <h1 class="header-text">Wallahi</h1>
+        <h1 class="header-text">User data</h1>
       </div>
     </header>
     <main>
-      <section class="pic">
-        <div class="mainscreen">
-          <img src="221218184732-messi-wc-trophy.jpg" />
+      <section class="login">
+        <div class="userListwDetails">
+          <button id="loadUsers" type="submit">Load users</button>
         </div>
-      </section>
-      <section class="createAccount">
-        <h3>Upload personal details ↓</h3>
-        <button
-          onclick="window.location='uploadInfo.html' "
-          id="registerButton"
-        >
-          Create account
-        </button>
       </section>
     </main>
   </body>

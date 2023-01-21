@@ -20,7 +20,7 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
         if (login[0].role == 1) {
           window.location.replace("afterLogin.html");
         } else {
-          window.location.replace("register.html");
+          window.location.replace("uploadInfo.html");
         }
       } else {
         console.log("Wrong details");
