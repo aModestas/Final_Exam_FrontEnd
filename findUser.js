@@ -83,6 +83,9 @@ document.getElementById("loadFromSearch").addEventListener("click", (e) => {
     const tdRemoveButton = document.createElement("button");
     tdRemoveButton.id = "removeButton";
     tdRemoveButton.textContent = "REMOVE";
+    const tdMakeAdminButton = document.createElement("button");
+    tdMakeAdminButton.id = "makeAdminButton";
+    tdMakeAdminButton.textContent = "MAKE ADMIN";
 
     tdId.textContent = user.id;
     img.src = user.picture;
@@ -105,6 +108,7 @@ document.getElementById("loadFromSearch").addEventListener("click", (e) => {
       tdEmail,
       tdAddressID,
       tdUserID,
+      tdMakeAdminButton,
       tdRemoveButton
     );
     tdImg.append(img);
@@ -112,7 +116,7 @@ document.getElementById("loadFromSearch").addEventListener("click", (e) => {
       e.preventDefault();
       let input = document.querySelector("#search").value;
       const role = sessionStorage.getItem("role");
-      if (role == "admin") {
+      if (role == "admin" && user.userId != sessionStorage.getItem("userId")) {
         fetch("https://localhost:7068/Person/id?id=" + input, {
           method: "DELETE",
           body: JSON.stringify(user),
@@ -132,6 +136,35 @@ document.getElementById("loadFromSearch").addEventListener("click", (e) => {
         alert("You don't have the capacity for that bigman");
       }
     });
+    document
+      .getElementById("makeAdminButton")
+      .addEventListener("click", (e) => {
+        e.preventDefault();
+        //let input = document.querySelector("#search").value;
+        const role = sessionStorage.getItem("role");
+        if (
+          role == "admin" &&
+          user.userId != sessionStorage.getItem("userId")
+        ) {
+          fetch("https://localhost:7068/User/id?id=" + user.userId, {
+            method: "PUT",
+            body: JSON.stringify(user),
+            headers: {
+              Accept: "text/plain",
+              "Content-Type": "application/json",
+            },
+          }).then((res) => {
+            if (res.ok) {
+              alert("User role changed to admin");
+              window.location.reload();
+            } else {
+              alert("Request failed");
+            }
+          });
+        } else {
+          alert("You don't have the capacity for that bigman");
+        }
+      });
   }
   document.querySelector("form").addEventListener("submit", masterFilter);
   function masterFilter(e) {
