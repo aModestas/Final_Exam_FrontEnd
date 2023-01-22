@@ -1,4 +1,4 @@
-html {
+body {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
@@ -6,11 +6,7 @@ html {
   justify-content: center;
   background-color: antiquewhite;
 }
-body {
-  padding-top: 15rem;
-}
-main,
-header {
+main {
   background-color: bisque;
 }
 main,
@@ -29,4 +25,48 @@ form {
 img {
   max-width: 100%;
   height: auto;
+}
+.homeLogo {
+  max-width: 10%;
+  height: auto;
+}
+nav {
+  padding: 1rem 0.5rem 3rem 0.5rem;
+}
+.drop {
+  background-color: black;
+  color: white;
+  border-radius: 1rem;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.nuorodos {
+  position: relative;
+  float: right;
+}
+.drop-nuorodos {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.drop-nuorodos a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.drop-nuorodos a:hover {
+  background-color: #f1f1f1;
+}
+.nuorodos:hover .drop-nuorodos {
+  display: block;
+}
+.nuorodos:hover .drop {
+  background-color: grey;
 }

@@ -17,11 +17,7 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
         console.log("Success");
         sessionStorage.setItem("userId", login[0].id);
         sessionStorage.setItem("role", login[0].role);
-        if (login[0].role == 1) {
-          window.location.replace("findUser.html");
-        } else {
-          window.location.replace("findUser.html");
-        }
+        window.location.replace("afterLogIn.html");
       } else {
         console.log("Wrong details");
         alert("Wrong username or password");

@@ -51,7 +51,7 @@ function createSearch() {
 
   button.textContent = "Search";
   form.append(input, button);
-  document.body.prepend(form);
+  document.body.append(form);
 }
 
 document.getElementById("loadFromSearch").addEventListener("click", (e) => {
