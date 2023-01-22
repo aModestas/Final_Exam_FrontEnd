@@ -1,3 +1,10 @@
+document.getElementById("logout").addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.replace("index.html");
+  sessionStorage.clear();
+  console.log("Session cleared");
+  console.log(sessionStorage.getItem("userId"));
+});
 document.getElementById("loadUsers").addEventListener("click", (e) => {
   e.preventDefault();
   var x = document.getElementById("loadUsers");
@@ -75,6 +82,8 @@ document.getElementById("loadUsers").addEventListener("click", (e) => {
 
       tdId.textContent = user.id;
       img.src = "data:image/png;base64," + user.picture;
+      tdImg.style.height = "200px";
+      tdImg.style.width = "200px";
       tdName.textContent = user.name;
       tdLastname.textContent = user.lastname;
       tdPersonCode.textContent = user.personCode;

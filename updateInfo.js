@@ -1,3 +1,10 @@
+document.getElementById("logout").addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.replace("index.html");
+  sessionStorage.clear();
+  console.log("Session cleared");
+  console.log(sessionStorage.getItem("userId"));
+});
 console.log(sessionStorage.getItem("userId"));
 fetch("https://localhost:7068/Person").then((response) => {
   response.json().then((data) => {

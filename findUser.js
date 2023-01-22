@@ -1,3 +1,10 @@
+document.getElementById("logout").addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.replace("index.html");
+  sessionStorage.clear();
+  console.log("Session cleared");
+  console.log(sessionStorage.getItem("userId"));
+});
 createSearch();
 createTable();
 console.log(sessionStorage.getItem("role"));
@@ -72,6 +79,8 @@ document.getElementById("loadFromSearch").addEventListener("click", (e) => {
     const tr = document.createElement("tr");
     const tdId = document.createElement("td");
     const tdImg = document.createElement("td");
+    tdImg.style.height = "200px";
+    tdImg.style.width = "200px";
     const img = document.createElement("img");
     const tdName = document.createElement("td");
     const tdLastname = document.createElement("td");
