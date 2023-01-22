@@ -24,7 +24,10 @@ function createTable() {
   const thPersonCode = document.createElement("th");
   const thTelNumber = document.createElement("th");
   const thEmail = document.createElement("th");
-  const thAddressID = document.createElement("th");
+  const thAddressCity = document.createElement("th");
+  const thAddressStreet = document.createElement("th");
+  const thAddressHouseNumber = document.createElement("th");
+  const thAddressFlatNumber = document.createElement("th");
   const thUserID = document.createElement("th");
   const thImg = document.createElement("th");
   thID.textContent = "ID";
@@ -34,8 +37,10 @@ function createTable() {
   thPersonCode.textContent = "Person Code";
   thTelNumber.textContent = "Tel. Number";
   thEmail.textContent = "Email";
-  thAddressID.textContent = "Address ID";
-  thUserID.textContent = "User ID";
+  thAddressCity.textContent = "City";
+  thAddressStreet.textContent = "Street";
+  thAddressHouseNumber.textContent = "House Nr.";
+  thAddressFlatNumber.textContent = "Flat Nr.";
 
   tr.append(
     thID,
@@ -45,8 +50,10 @@ function createTable() {
     thPersonCode,
     thTelNumber,
     thEmail,
-    thAddressID,
-    thUserID
+    thAddressCity,
+    thAddressStreet,
+    thAddressHouseNumber,
+    thAddressFlatNumber
   );
 }
 function createSearch() {
@@ -87,7 +94,10 @@ document.getElementById("loadFromSearch").addEventListener("click", (e) => {
     const tdPersonCode = document.createElement("td");
     const tdTelNumber = document.createElement("td");
     const tdEmail = document.createElement("td");
-    const tdAddressID = document.createElement("td");
+    const tdAddressCity = document.createElement("td");
+    const tdAddressStreet = document.createElement("td");
+    const tdAddressHouseNumber = document.createElement("td");
+    const tdAddressFlatNumber = document.createElement("td");
     const tdUserID = document.createElement("td");
     const tdRemoveButton = document.createElement("button");
     tdRemoveButton.id = "removeButton";
@@ -103,7 +113,10 @@ document.getElementById("loadFromSearch").addEventListener("click", (e) => {
     tdPersonCode.textContent = user.personCode;
     tdTelNumber.textContent = user.telNumber;
     tdEmail.textContent = user.email;
-    tdAddressID.textContent = user.addressId;
+    tdAddressCity.textContent = user.address.city;
+    tdAddressStreet.textContent = user.address.street;
+    tdAddressHouseNumber.textContent = user.address.houseNumber;
+    tdAddressFlatNumber.textContent = user.address.flatNumber;
     tdUserID.textContent = user.userId;
 
     tbody.append(tr);
@@ -115,8 +128,10 @@ document.getElementById("loadFromSearch").addEventListener("click", (e) => {
       tdPersonCode,
       tdTelNumber,
       tdEmail,
-      tdAddressID,
-      tdUserID,
+      tdAddressCity,
+      tdAddressStreet,
+      tdAddressHouseNumber,
+      tdAddressFlatNumber,
       tdMakeAdminButton,
       tdRemoveButton
     );
