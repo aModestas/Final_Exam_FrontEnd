@@ -10,6 +10,7 @@ createTable();
 console.log(sessionStorage.getItem("role"));
 function createTable() {
   const createTable = document.createElement("table");
+  createTable.style.paddingTop = "5rem";
   document.body.append(createTable);
   const tBody = document.createElement("tbody");
   const tHead = document.createElement("thead");
@@ -19,17 +20,27 @@ function createTable() {
   tHead.append(tr);
 
   const thID = document.createElement("th");
+  thID.style.paddingRight = "5rem";
   const thName = document.createElement("th");
+  thName.style.paddingRight = "5em";
   const thLastname = document.createElement("th");
+  thLastname.style.paddingRight = "5rem";
   const thPersonCode = document.createElement("th");
+  thPersonCode.style.paddingRight = "5rem";
   const thTelNumber = document.createElement("th");
+  thTelNumber.style.paddingRight = "5rem";
   const thEmail = document.createElement("th");
+  thEmail.style.paddingRight = "5rem";
   const thAddressCity = document.createElement("th");
+  thAddressCity.style.paddingRight = "5rem";
   const thAddressStreet = document.createElement("th");
+  thAddressStreet.style.paddingRight = "5rem";
   const thAddressHouseNumber = document.createElement("th");
+  thAddressHouseNumber.style.paddingRight = "5rem";
   const thAddressFlatNumber = document.createElement("th");
-  const thUserID = document.createElement("th");
+  thAddressFlatNumber.style.paddingRight = "5rem";
   const thImg = document.createElement("th");
+  thImg.style.paddingRight = "5rem";
   thID.textContent = "ID";
   thImg.textContent = "Picture";
   thName.textContent = "Name";
@@ -102,6 +113,7 @@ document.getElementById("loadFromSearch").addEventListener("click", (e) => {
     const tdRemoveButton = document.createElement("button");
     tdRemoveButton.id = "removeButton";
     tdRemoveButton.textContent = "REMOVE";
+    tdRemoveButton.style.marginTop = "5rem";
     const tdMakeAdminButton = document.createElement("button");
     tdMakeAdminButton.id = "makeAdminButton";
     tdMakeAdminButton.textContent = "MAKE ADMIN";
@@ -164,7 +176,6 @@ document.getElementById("loadFromSearch").addEventListener("click", (e) => {
       .getElementById("makeAdminButton")
       .addEventListener("click", (e) => {
         e.preventDefault();
-        //let input = document.querySelector("#search").value;
         const role = sessionStorage.getItem("role");
         if (
           role == "admin" &&
