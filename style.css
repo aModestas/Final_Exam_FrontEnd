@@ -6,9 +6,6 @@ body {
   justify-content: center;
   background-color: antiquewhite;
 }
-main {
-  background-color: bisque;
-}
 main,
 .createAccount,
 input {
@@ -16,6 +13,12 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+h1 {
+  font-size: 3rem;
+}
+label {
+  font-size: 2rem;
 }
 form {
   display: flex;
@@ -25,6 +28,7 @@ form {
 img {
   max-width: 100%;
   height: auto;
+  border-radius: 0.5rem;
 }
 .homeLogo {
   max-width: 10%;

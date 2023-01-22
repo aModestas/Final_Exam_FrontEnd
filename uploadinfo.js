@@ -10,7 +10,6 @@ document.getElementById("detailsForm").addEventListener("submit", (e) => {
   const street = document.getElementById("street").value;
   const houseNumber = document.getElementById("houseNumber").value;
   const flatNumber = document.getElementById("flatNumber").value;
-  //const picture = document.getElementById("img").value;
 
   let base64String = "";
   function imageUploaded() {
@@ -43,7 +42,7 @@ document.getElementById("detailsForm").addEventListener("submit", (e) => {
       }).then((res) => {
         if (res.ok) {
           alert("Užklausa sėkminga");
-          window.location.replace("index.html");
+          window.location.replace("afterLogin.html");
         } else {
           alert("Užklausa nesėkminga");
         }

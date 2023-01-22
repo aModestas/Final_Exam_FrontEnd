@@ -12,7 +12,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="uploadinfo.js" defer></script>
+    <script src="updateInfo.js" defer></script>
     <title>Upload info</title>
   </head>
   <body>
@@ -33,7 +33,7 @@
         </div>
       </nav>
       <div class="title">
-        <h1 class="header-text">Upload personal information</h1>
+        <h1 class="header-text">Update personal information</h1>
       </div>
     </header>
     <main>
@@ -47,8 +47,8 @@
               placeholder="Name"
               minlength="3"
               maxlength="20"
-              required
             />
+            <button type="submit" id="updateNameField">Update</button>
             <label for="lastName">Last name:</label>
             <input
               type="text"
@@ -56,8 +56,8 @@
               placeholder="Last name"
               minlength="3"
               maxlength="22"
-              required
             />
+            <button type="submit" id="updateLastNameField">Update</button>
             <label for="personCode">Person code</label>
             <input
               type="number"
@@ -65,8 +65,8 @@
               placeholder="Person code"
               minlength="8"
               maxlength="22"
-              required
             />
+            <button type="submit" id="updatePersonCodeField">Update</button>
             <label for="telNumber">Telephone number</label>
             <input
               type="number"
@@ -74,8 +74,8 @@
               placeholder="Telephone Number"
               minlength="5"
               maxlength="22"
-              required
             />
+            <button type="submit" id="updateTelNumberField">Update</button>
             <label for="email">Email</label>
             <input
               type="email"
@@ -83,17 +83,11 @@
               placeholder="Email@gmail.com"
               minlength="8"
               maxlength="22"
-              required
             />
+            <button type="submit" id="updateEmailField">Update</button>
             <label for="city">City</label>
-            <input
-              type="string"
-              id="city"
-              placeholder="City"
-              minlength="2"
-              maxlength="22"
-              required
-            />
+            <input type="string" id="city" placeholder="City" minlength="2" />
+            <button type="submit" id="updateCityField">Update</button>
             <label for="street">Street</label>
             <input
               type="string"
@@ -101,8 +95,8 @@
               placeholder="Street"
               minlength="2"
               maxlength="22"
-              required
             />
+            <button type="submit" id="updateStreetField">Update</button>
             <label for="houseNumber">House number</label>
             <input
               type="number"
@@ -110,8 +104,8 @@
               placeholder="House number"
               minlength="1"
               maxlength="22"
-              required
             />
+            <button type="submit" id="updateHouseNumberField">Update</button>
             <label for="flatNumber">Flat number</label>
             <input
               type="number"
@@ -119,8 +113,8 @@
               placeholder="Flat number"
               minlength="1"
               maxlength="22"
-              required
             />
+            <button type="submit" id="updateFlatNumberField">Update</button>
             <label for="img">Photo</label>
             <input
               type="file"
@@ -129,9 +123,8 @@
               accept="image/*"
               width="200px"
               height="200px"
-              required
             />
-            <button type="submit" id="addInfo">Upload information</button>
+            <button type="submit" id="updatePicture">Update</button>
           </form>
         </div>
       </section>
