@@ -169,7 +169,7 @@ document.getElementById("loadFromSearch").addEventListener("click", (e) => {
           }
         });
       } else {
-        alert("You don't have the capacity for that bigman");
+        alert("You do not have right to perform this action");
       }
     });
     document
@@ -197,7 +197,7 @@ document.getElementById("loadFromSearch").addEventListener("click", (e) => {
             }
           });
         } else {
-          alert("You don't have the capacity for that bigman");
+          alert("You do not have right to perform this action");
         }
       });
   }

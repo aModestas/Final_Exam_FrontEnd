@@ -8,11 +8,15 @@ body {
 }
 main,
 .createAccount,
-input {
+input,
+.mainscreen {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.mainscreen {
+  padding: 0 10rem 10rem 10rem;
 }
 h1 {
   font-size: 3rem;
