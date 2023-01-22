@@ -91,12 +91,6 @@ document.getElementById("loadUsers").addEventListener("click", (e) => {
       const tdAddressHouseNumber = document.createElement("td");
       const tdAddressFlatNumber = document.createElement("td");
       const tdUserID = document.createElement("td");
-      const tdRemoveButton = document.createElement("button");
-      tdRemoveButton.id = "removeButton";
-      tdRemoveButton.textContent = "REMOVE";
-      const tdMakeAdminButton = document.createElement("button");
-      tdMakeAdminButton.id = "makeAdminButton";
-      tdMakeAdminButton.textContent = "MAKE ADMIN";
 
       tdId.textContent = user.id;
       img.src = "data:image/png;base64," + user.picture;
@@ -123,9 +117,7 @@ document.getElementById("loadUsers").addEventListener("click", (e) => {
         tdAddressCity,
         tdAddressStreet,
         tdAddressHouseNumber,
-        tdAddressFlatNumber,
-        tdMakeAdminButton,
-        tdRemoveButton
+        tdAddressFlatNumber
       );
       tdImg.append(img);
     });

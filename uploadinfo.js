@@ -48,10 +48,10 @@ document.getElementById("detailsForm").addEventListener("submit", (e) => {
         },
       }).then((res) => {
         if (res.ok) {
-          alert("Užklausa sėkminga");
+          alert("User information has been updated");
           window.location.replace("afterLogin.html");
         } else {
-          alert("Užklausa nesėkminga");
+          alert("Something went wrong");
         }
       });
     };

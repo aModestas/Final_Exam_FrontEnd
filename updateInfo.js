@@ -27,9 +27,9 @@ fetch("https://localhost:7068/Person").then((response) => {
             },
           }).then((res) => {
             if (res.ok) {
-              alert("Užklausa sėkminga");
+              alert("Name has been updated");
             } else {
-              alert("Užklausa nesėkminga");
+              alert("Something went wrong");
             }
           });
         }),
@@ -48,9 +48,9 @@ fetch("https://localhost:7068/Person").then((response) => {
               },
             }).then((res) => {
               if (res.ok) {
-                alert("Užklausa sėkminga");
+                alert("Last name has been updated");
               } else {
-                alert("Užklausa nesėkminga");
+                alert("Something went wrong");
               }
             });
           }),
@@ -72,9 +72,9 @@ fetch("https://localhost:7068/Person").then((response) => {
               }
             ).then((res) => {
               if (res.ok) {
-                alert("Užklausa sėkminga");
+                alert("Person code has been updated");
               } else {
-                alert("Užklausa nesėkminga");
+                alert("Something went wrong");
               }
             });
           }),
@@ -93,9 +93,9 @@ fetch("https://localhost:7068/Person").then((response) => {
               },
             }).then((res) => {
               if (res.ok) {
-                alert("Užklausa sėkminga");
+                alert("Tel. Nr. has been updated");
               } else {
-                alert("Užklausa nesėkminga");
+                alert("Something went wrong");
               }
             });
           }),
@@ -114,9 +114,9 @@ fetch("https://localhost:7068/Person").then((response) => {
               },
             }).then((res) => {
               if (res.ok) {
-                alert("Užklausa sėkminga");
+                alert("Email has been updated");
               } else {
-                alert("Užklausa nesėkminga");
+                alert("Something went wrong");
               }
             });
           }),
@@ -135,9 +135,9 @@ fetch("https://localhost:7068/Person").then((response) => {
               },
             }).then((res) => {
               if (res.ok) {
-                alert("Užklausa sėkminga");
+                alert("City has been updated");
               } else {
-                alert("Užklausa nesėkminga");
+                alert("Something went wrong");
               }
             });
           }),
@@ -156,9 +156,9 @@ fetch("https://localhost:7068/Person").then((response) => {
               },
             }).then((res) => {
               if (res.ok) {
-                alert("Užklausa sėkminga");
+                alert("Street has been updated");
               } else {
-                alert("Užklausa nesėkminga");
+                alert("Something went wrong");
               }
             });
           }),
@@ -180,9 +180,9 @@ fetch("https://localhost:7068/Person").then((response) => {
               }
             ).then((res) => {
               if (res.ok) {
-                alert("Užklausa sėkminga");
+                alert("House Nr. has been updated");
               } else {
-                alert("Užklausa nesėkminga");
+                alert("Something went wrong");
               }
             });
           }),
@@ -204,9 +204,9 @@ fetch("https://localhost:7068/Person").then((response) => {
               }
             ).then((res) => {
               if (res.ok) {
-                alert("Užklausa sėkminga");
+                alert("Flat Nr. has been updated");
               } else {
-                alert("Užklausa nesėkminga");
+                alert("Something went wrong");
               }
             });
           }),
@@ -237,9 +237,9 @@ fetch("https://localhost:7068/Person").then((response) => {
                   }
                 ).then((res) => {
                   if (res.ok) {
-                    alert("Užklausa sėkminga");
+                    alert("Picture has been updated");
                   } else {
-                    alert("Užklausa nesėkminga");
+                    alert("Something went wrong");
                   }
                 });
               };
@@ -247,8 +247,8 @@ fetch("https://localhost:7068/Person").then((response) => {
             }
           });
     } else {
-      console.log("Wrong details");
-      alert("Something went wrong");
+      console.log("No details for current user found");
+      window.location.replace("uploadInfo.html");
     }
   });
 });
