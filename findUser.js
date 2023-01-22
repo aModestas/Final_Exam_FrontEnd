@@ -88,7 +88,7 @@ document.getElementById("loadFromSearch").addEventListener("click", (e) => {
     tdMakeAdminButton.textContent = "MAKE ADMIN";
 
     tdId.textContent = user.id;
-    img.src = user.picture;
+    img.src = "data:image/png;base64," + user.picture;
     tdName.textContent = user.name;
     tdLastname.textContent = user.lastname;
     tdPersonCode.textContent = user.personCode;
